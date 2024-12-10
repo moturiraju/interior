@@ -5,6 +5,8 @@ import Services from './components/services';
 import Footer from './components/Footer'; 
 import About from './components/about'; 
 import Login from './components/login';
+import Signup from './components/Signup';
+import Contact from './components/contact';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -16,7 +18,9 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
         <Route path="/home" element={<Home />}/>
-        <Route Path="/login" element={<Login />}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/contact" element={<Contact />} />
         {/* Add other routes as needed */}
       </Routes>
       <Footer/>

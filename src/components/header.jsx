@@ -27,7 +27,7 @@ function Header() {
         {/* Navigation Links */}
         {!isMobile && (
           <Box sx={{ display: 'flex', gap: 2 }}>
-            {['About', 'Services', 'Contact', 'Login', 'Signup'].map((item) => (
+            {['About', 'Services', 'Contact', 'login', 'Signup'].map((item) => (
               <Button key={item} color="inherit" component={Link} to={`/${item.toLowerCase()}`}>
               {item}
             </Button>

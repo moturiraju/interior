@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { TextField, Button, Container, Box, Typography } from '@mui/material';
-import Signup from './Signup';
-import { Link } from 'react-router-dom';
 
-function Login() {
+function Signup() {
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
-    password: ''
+    phoneNumber: '',
+    password: '',
+    confirmPassword: ''
   });
 
   const handleInputChange = (e) => {
@@ -19,18 +20,27 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform login logic here
+    // Perform signup logic here
     console.log('Form Data:', formData);
-    // Implement authentication logic
   };
 
   return (
     <Container component="main" maxWidth="xs">
       <Box sx={{ marginTop: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Typography component="h1" variant="h5">
-          Sign In
+          Sign Up
         </Typography>
         <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            label="Name"
+            name="name"
+            autoFocus
+            value={formData.name}
+            onChange={handleInputChange}
+          />
           <TextField
             margin="normal"
             required
@@ -45,10 +55,30 @@ function Login() {
             margin="normal"
             required
             fullWidth
+            label="Phone Number"
+            type="tel"
+            name="phoneNumber"
+            value={formData.phoneNumber}
+            onChange={handleInputChange}
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
             name="password"
             label="Password"
             type="password"
             value={formData.password}
+            onChange={handleInputChange}
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="confirmPassword"
+            label="Confirm Password"
+            type="password"
+            value={formData.confirmPassword}
             onChange={handleInputChange}
           />
           <Button
@@ -57,13 +87,12 @@ function Login() {
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            Sign In
+            Sign Up
           </Button>
-          <a href='/signup'>Not Registered</a>
         </Box>
       </Box>
     </Container>
   );
 }
 
-export default Login;
+export default Signup;
