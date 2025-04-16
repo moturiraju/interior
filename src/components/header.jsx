@@ -12,7 +12,6 @@ function Header() {
     <AppBar position="static" sx={{ backgroundColor: '#006E33', boxShadow: 3 }}>
       <Toolbar>
         {/* Logo or Icon */}
-        <MenuIcon></MenuIcon>
         <IconButton
           src={logo} // Use relative path if placed in the public folder
           sx={{ height: 40, mr: 1 }} // Adjust height and margin as needed
